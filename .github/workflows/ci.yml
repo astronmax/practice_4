@@ -1,0 +1,16 @@
+name: Run tests
+run-name: Run all unit tests
+on: [push]
+
+jobs:
+  testing:
+    runs-on: self-hosted
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+        with:
+          fetch-tags: true
+          fetch-depth: 0
+      
+      - run: python3 -m venv .env
+      - run: source .env/bin/activate && pip3 install -r requirements.txt && python3 test.py
