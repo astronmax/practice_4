@@ -133,7 +133,6 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Использование: python sentiment_analyzer.py <путь_к_файлу> [<путь_к_файлу2> ...]")
     elif len(sys.argv) == 2:
-        result = analyze_file(sys.argv[1])
-        print(result['normalized_score'])
+        analyze_file(sys.argv[1])
     else:
         compare_texts(sys.argv[1:])
