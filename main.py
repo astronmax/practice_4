@@ -124,3 +124,14 @@ def compare_texts(file_paths):
         print("Нет результатов для сравнения")
     
     return results
+
+# Пример использования
+if __name__ == "__main__":
+    import sys
+    
+    if len(sys.argv) < 2:
+        print("Использование: python sentiment_analyzer.py <путь_к_файлу> [<путь_к_файлу2> ...]")
+    elif len(sys.argv) == 2:
+        analyze_file(sys.argv[1])
+    else:
+        compare_texts(sys.argv[1:])
