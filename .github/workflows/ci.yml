@@ -14,3 +14,4 @@ jobs:
       
       - run: python3 -m venv .env
       - run: source .env/bin/activate && pip3 install -r requirements.txt && python3 test.py
+      - run: coverage run --source=main -m unittest test_main.py && coverage report
