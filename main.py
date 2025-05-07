@@ -8,6 +8,7 @@ import pandas as pd
 # Загрузка необходимых ресурсов NLTK
 nltk.download('punkt')
 nltk.download('stopwords')
+nltk.download('punkt_tab')
 
 # Функция для предобработки текста
 def preprocess_text(text):
@@ -132,6 +133,7 @@ if __name__ == "__main__":
     if len(sys.argv) < 2:
         print("Использование: python sentiment_analyzer.py <путь_к_файлу> [<путь_к_файлу2> ...]")
     elif len(sys.argv) == 2:
-        analyze_file(sys.argv[1])
+        result = analyze_file(sys.argv[1])
+        print(result['normalized_score'])
     else:
         compare_texts(sys.argv[1:])
